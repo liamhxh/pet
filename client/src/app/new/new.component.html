@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous'>
+  <title>ADD PET</title>
+</head>
+<body>
+  <div class="container">
+    <form (submit)="onSubmit()">
+      <h2>Know of a pet needing a home</h2>
+      <h3 *ngIf="errMessage" style="color:red">{{errMessage}}</h3>
+      <h5>Pet Name:</h5>
+      <input type="text" name="pet.name" [(ngModel)]="pet.name" />
+      <h5>Pet type:</h5>
+      <input type="text" name="pet.type" [(ngModel)]="pet.type" />
+      <h5>Description:</h5>
+      <input type="text" name="pet.desc" [(ngModel)]="pet.desc" />
+
+      <h5>Skills:</h5>
+      <h6 style="margin-left : 20px">  Skill 1 :</h6>
+      <input style="margin-left : 20px" type="text" name="pet.skills[0]" [(ngModel)]="pet.skills[0]" />
+      <h6 style="margin-left : 20px">  Skill 2 :</h6>
+      <input style="margin-left : 20px" type="text" name="pet.skills[1]" [(ngModel)]="pet.skills[1]" />
+      <h6 style="margin-left : 20px">  Skill 3 :</h6>
+      <input style="margin-left : 20px" type="text" name="pet.skills[2]" [(ngModel)]="pet.skills[2]" />
+
+      <br>
+      <br>
+      <input type="submit" value="Add Pet" /><button style="margin-left : 20px" style="margin-left : 20px" style="margin-left : 20px" [routerLink]="['/']">Back to home</button>
+    </form>
+  </div>
+</body>
+</html>
